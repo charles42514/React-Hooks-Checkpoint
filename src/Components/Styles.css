@@ -1,0 +1,33 @@
+/* styles.css */
+.app {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .movie-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    max-width: 200px;
+  }
+  
+  .movie-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .filter {
+    margin-bottom: 20px;
+  }
+  
+  .add-movie-form {
+    margin-top: 20px;
+  }
+  
+  /* Add more styling as needed */
+  
