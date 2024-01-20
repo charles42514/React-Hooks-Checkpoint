@@ -1,23 +1,50 @@
 // Filter.js
-import React from 'react';
-import './Styles.css';
+import React, { useState } from 'react';
 
 const Filter = ({ onFilterChange }) => {
+  const [filter, setFilter] = useState({
+    title: '',
+    rate: '',
+  });
+
+  const handleInputChange = (e) => {
+    setFilter({ ...filter, [e.target.name]: e.target.value });
+  };
+
+  const handleFilter = () => {
+    onFilterChange(filter);
+  };
+
   return (
     <div className="filter">
       <label htmlFor="title">Title:</label>
       <input
         type="text"
         id="title"
-        onChange={(e) => onFilterChange('title', e.target.value)}
+        name="title"
+        value={filter.title}
+        onChange={handleInputChange}
       />
 
-      <label htmlFor="rating">Rating:</label>
+      <label htmlFor="rate">Rating:</label>
       <input
         type="text"
-        id="rating"
-        onChange={(e) => onFilterChange('rating', e.target.value)}
+        id="rate"
+        name="rate"
+        value={filter.rate}
+        onChange={handleInputChange}
       />
+
+<label htmlFor="rate">Description:</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        value={filter.description}
+        onChange={handleInputChange}
+      />
+
+      <button onClick={handleFilter}>Filter</button>
     </div>
   );
 };
